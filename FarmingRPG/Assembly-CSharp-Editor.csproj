@@ -638,14 +638,29 @@
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.PixelPerfect">
+ <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Tilemap.Editor">
+ <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
  <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.PixelPerfect.Editor">
+ <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -656,6 +671,9 @@
  <Reference Include="Unity.TextMeshPro">
  <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.2D.Sprite.Editor">
+ <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
@@ -664,24 +682,6 @@
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="com.unity.cinemachine.editor">
- <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
- </Reference>
- <Reference Include="Cinemachine">
- <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.PixelPerfect">
- <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.PixelPerfect.Editor">
- <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>D:/MyProjects/FunTest/FunnyFarmingRPGGame/Farming-RPG/FarmingRPG/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
