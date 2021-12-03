@@ -31,7 +31,9 @@ public class Player : SingletonMonobehaviour<Player>
 
     private Rigidbody2D rigidbody2D;
     private float moveSpeed;
+    #pragma warning disable 414
     private Direction direction;
+    #pragma warning restore 414
     protected override void Awake()
     {
         base.Awake();
