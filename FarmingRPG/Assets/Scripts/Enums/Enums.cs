@@ -23,6 +23,7 @@ public enum ItemType
     Reaping_tool,//收割的工具
     Collecting_tool,
     Reapable_scenary,
+    Furniture,
     none,
     count
 }
