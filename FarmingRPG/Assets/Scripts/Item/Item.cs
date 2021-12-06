@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class Item : MonoBehaviour
 {
+    [ItemCodeDescription]
     [SerializeField]
     private int _itemCode;
     public int ItemCode
@@ -28,7 +29,15 @@ public class Item : MonoBehaviour
 
     public void Init(int itemCode)
     {
-        
+        //根据不同的item类型，添加不同的组件
+        ItemDetails itemDetails=InventoryManager.Instance.GetItemDetails(itemCode);
+        if (itemDetails != null)
+        {
+            if (itemDetails.itemType == ItemType.Reapable_scenary)
+            {
+                gameObject.AddComponent<ItemNudge>();
+            }
+        }
     }
      
     

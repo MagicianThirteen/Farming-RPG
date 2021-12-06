@@ -53,6 +53,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Tilemap\Custom Brush Scripts\Coordinate Brush\Editor\CoordinateBrush.cs" />
+     <Compile Include="Assets\Scripts\Utilities\Editor\ItemCodeDescriptionDrawer.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.0f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
