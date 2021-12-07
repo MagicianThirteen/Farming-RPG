@@ -4,6 +4,10 @@ using UnityEngine;
 
 public static class Settings
 {
+    //定义背包初始化容量和最大化容量
+    public static int playerInitialInventoryCapacity = 24;
+    public static int playerMaximumInventoryCapacity = 48;
+    
     //Fade in or out
     public const float fadeInSeconds = 0.25f;
     public const float fadeOutSeconds = 0.35f;
@@ -19,7 +23,7 @@ public static class Settings
     public static int walkLeft;
     public static int walkRight;
     public static int eventAnimation;
-
+    
     // Player Animation Parameters
     public static int xInput;
     public static int yInput;

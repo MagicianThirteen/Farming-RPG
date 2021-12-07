@@ -34,10 +34,12 @@ public class Player : SingletonMonobehaviour<Player>
     #pragma warning disable 414
     private Direction direction;
     #pragma warning restore 414
+    private Camera _camera;
     protected override void Awake()
     {
         base.Awake();
         rigidbody2D = GetComponent<Rigidbody2D>();
+        _camera=Camera.main;
     }
 
     private void Update()
@@ -139,5 +141,10 @@ public class Player : SingletonMonobehaviour<Player>
         isSwingingToolUp = false;
         isSwingingToolDown = false;
         toolEffect = ToolEffect.none;
+    }
+
+    public Vector3 GetPlayerViewportPosition()
+    {
+        return _camera.WorldToViewportPoint(transform.position);
     }
 }

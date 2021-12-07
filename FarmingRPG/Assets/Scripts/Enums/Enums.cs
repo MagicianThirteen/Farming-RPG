@@ -4,6 +4,14 @@ public enum ToolEffect
     watering
 }
 
+//不同容器的定义
+public enum InventoryLocation
+{
+    player=0,
+    chest=1,
+    count=2,//这里加的count是为了好方便统计总共有多个个比如用InventoryLocation.count
+}
+
 public enum Direction
 {
     right,
