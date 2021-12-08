@@ -2,10 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIInventoryBar : MonoBehaviour
 {
     private bool _isInventoryBarPositionBottom=false;
+    public Sprite blank16x16sprite;
+    public UIInventorySlot[] inventorySlots;
+    public GameObject itemGo;
+    public GameObject dragItemGo;
 
     private RectTransform _rect;
     // Update is called once per frame
@@ -14,9 +19,64 @@ public class UIInventoryBar : MonoBehaviour
         _rect = GetComponent<RectTransform>();
     }
 
+    private void OnEnable()
+    {
+        EventHandler.InventoryUpdatedEvent += InventoryUpdated;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.InventoryUpdatedEvent -= InventoryUpdated;
+    }
+
     void Update()
     {
         SwitchInventoryBarPosition();
+    }
+
+    private void InventoryUpdated(InventoryLocation location, List<InventoryItem> items)
+    {
+        if (location == InventoryLocation.player)
+        {
+            if (items.Count >= 0&&inventorySlots.Length>0)
+            {
+                //清空之前的列表
+                ClearInventoryBar();
+                for (int i = 0; i < inventorySlots.Length; i++)
+                {
+                    if (i < items.Count)
+                    {
+                        ItemDetails itemDetails = InventoryManager.Instance.GetItemDetails(items[i].itemCode);
+                        SetSlotInformation(inventorySlots[i],itemDetails.itemSprite, items[i].itemQuantity.ToString(), itemDetails, items[i].itemQuantity);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    private void ClearInventoryBar()
+    {
+        if (inventorySlots.Length > 0)
+        {
+            foreach (var slot in inventorySlots)
+            {
+                SetSlotInformation(slot,blank16x16sprite, " ", null, 0);
+            }
+        }
+    }
+
+    private void SetSlotInformation(UIInventorySlot slot,Sprite slotSprite, string text, ItemDetails itemDetails, int quantity)
+    {
+        slot.inventorySlotImage.sprite = slotSprite;
+        //slot.inventorySlotHighlight.sprite = hightLight;
+        slot.textMeshProUGUI.text = text;
+        slot.itemDetails = itemDetails;
+        slot.itemQuantity = quantity;
     }
 
     private void SwitchInventoryBarPosition()

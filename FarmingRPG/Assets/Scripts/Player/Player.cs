@@ -35,25 +35,67 @@ public class Player : SingletonMonobehaviour<Player>
     private Direction direction;
     #pragma warning restore 414
     private Camera _camera;
+    private bool isPlayerEnableWalk;
+    public bool IsPlayerEnableWalk
+    {
+        get => isPlayerEnableWalk;
+        set => isPlayerEnableWalk = value;
+    }
+
     protected override void Awake()
     {
         base.Awake();
         rigidbody2D = GetComponent<Rigidbody2D>();
         _camera=Camera.main;
+        isPlayerEnableWalk = true;
     }
 
     private void Update()
     {
-        ResetAnimationTriggers();
-        PlayerMovementInput();
-        PlayerWalkInput();
-        //调用事件发送
+        if (isPlayerEnableWalk == true)
+        {
+            ResetAnimationTriggers();
+            PlayerMovementInput();
+            PlayerWalkInput();
+            //调用事件发送
+            EventHandler.CallMovementEvent(xInput, yInput, isWalking, isRunning, isIdle, isCarrying, toolEffect,
+                isUsingToolRight, isUsingToolLeft, isUsingToolUp, isUsingToolDown,
+                isLiftingToolRight, isLiftingToolLeft, isLiftingToolUp, isLiftingToolDown,
+                isPickingRight, isPickingLeft, isPickingUp, isPickingDown,
+                isSwingingToolRight, isSwingingToolLeft, isSwingingToolUp, isSwingingToolDown,
+                false, false, false, false);
+        }
+    }
+
+    public void DisablePlayerInputAndResetMovement()
+    {
+        DisablePlayerInput();
+        RestMoveMent();
         EventHandler.CallMovementEvent(xInput, yInput, isWalking, isRunning, isIdle, isCarrying, toolEffect,
             isUsingToolRight, isUsingToolLeft, isUsingToolUp, isUsingToolDown,
             isLiftingToolRight, isLiftingToolLeft, isLiftingToolUp, isLiftingToolDown,
             isPickingRight, isPickingLeft, isPickingUp, isPickingDown,
             isSwingingToolRight, isSwingingToolLeft, isSwingingToolUp, isSwingingToolDown,
             false, false, false, false);
+    }
+
+    private void RestMoveMent()
+    {
+        xInput = 0;
+        yInput = 0;
+        isWalking = false;
+        isRunning = false;
+        isIdle = true;
+    }
+
+    public void EnablePlayerInput()
+    {
+        isPlayerEnableWalk = true;
+    }
+
+    public void DisablePlayerInput()
+    {
+        isPlayerEnableWalk = false;
     }
 
     private void FixedUpdate()

@@ -72,6 +72,45 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
         }
     }
 
+    public void SwapInventorySlot(InventoryLocation location, int from, int to)
+    {
+        List<InventoryItem> items = inventoryLists[(int) location];
+        //to和from都不能超过背包里有的数据的长度，to>0
+        if (items.Count > 0 && to < items.Count && to >= 0&&from!=to)
+        {
+            InventoryItem item = items[from];
+            items[from] = items[to];
+            items[to] = item;
+        }
+        EventHandler.InventoryUpdatedEvent(InventoryLocation.player, items);
+    }
+
+    /// <summary>
+    /// 从背包里移除物品
+    /// </summary>
+    /// <param name="location"></param>
+    /// <param name="itemCode"></param>
+    public void MoveItem(InventoryLocation location, int itemCode)
+    {
+        List<InventoryItem> items = inventoryLists[(int) location];
+        int position = FindItemInInventory(location, itemCode);
+        if (position != -1)
+        {
+            if (items[position].itemQuantity > 1)
+            {
+                InventoryItem tmp = new InventoryItem();
+                tmp.itemCode = itemCode;
+                tmp.itemQuantity = items[position].itemQuantity - 1;
+                items[position] = tmp;
+            }
+            else
+            {
+                items.RemoveAt(position);
+            }
+        }
+        EventHandler.InventoryUpdatedEvent(InventoryLocation.player, items);
+    }
+
     /// <summary>
     /// 在对应的列表里找加进来的物体，没有的返回-1，有的返回位置
     /// </summary>
@@ -99,9 +138,9 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
         inventoryItem.itemQuantity = 1;
         items.Add(inventoryItem);
         //打印
-        DebugPrintInventoryList(items);
+        //DebugPrintInventoryList(items);
         //触发事件
-        //EventHandler.InventoryUpdatedEvent(location, items);
+        EventHandler.InventoryUpdatedEvent(location, items);
     }
     private void AddItemPosition(InventoryLocation location, int itemCode,int position)
     {
@@ -111,9 +150,9 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
         inventoryItem.itemQuantity = items[position].itemQuantity + 1;
         items[position] = inventoryItem;//重新赋值
         //打印
-        DebugPrintInventoryList(items);
+        //DebugPrintInventoryList(items);
         //触发事件:比如ui修改
-        //EventHandler.InventoryUpdatedEvent(location, items);
+        EventHandler.InventoryUpdatedEvent(location, items);
     }
 
     private void DebugPrintInventoryList(List<InventoryItem> items)
