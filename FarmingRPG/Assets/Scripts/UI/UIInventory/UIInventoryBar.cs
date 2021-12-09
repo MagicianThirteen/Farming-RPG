@@ -7,6 +7,13 @@ using UnityEngine.UI;
 public class UIInventoryBar : MonoBehaviour
 {
     private bool _isInventoryBarPositionBottom=false;
+
+    public bool IsInventoryBarPositionBottom
+    {
+        get => _isInventoryBarPositionBottom;
+        set => _isInventoryBarPositionBottom = value;
+    }
+
     public Sprite blank16x16sprite;
     public UIInventorySlot[] inventorySlots;
     public GameObject itemGo;
@@ -57,6 +64,32 @@ public class UIInventoryBar : MonoBehaviour
             }
         }
         
+    }
+
+    public void ClearInventorySelect()
+    {
+        if (inventorySlots.Length > 0)
+        {
+            for (int i = 0; i < inventorySlots.Length; i++)
+            {
+                inventorySlots[i].isSelect = false;
+                inventorySlots[i].inventorySlotHighlight.color = new Color(0, 0, 0, 0);
+            }
+        }
+    }
+
+    public void SetInventorySelect()
+    {
+        if (inventorySlots.Length > 0)
+        {
+            for (int i = 0; i < inventorySlots.Length; i++)
+            {
+                if (inventorySlots[i].isSelect)
+                {
+                    inventorySlots[i].inventorySlotHighlight.color = new Color(1, 1, 1, 1);
+                }
+            }
+        }
     }
 
     private void ClearInventoryBar()

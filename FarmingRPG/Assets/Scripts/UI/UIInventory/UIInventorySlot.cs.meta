@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 30516bff6fdcf10449bc91259ba45182
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - dragItem: {instanceID: 0}
+  - inventorySlotHighlight: {instanceID: 0}
+  - inventorySlotImage: {instanceID: 0}
+  - textMeshProUGUI: {instanceID: 0}
+  - inventoryBar: {instanceID: 0}
+  - textBoxGo: {fileID: 5651791097610937563, guid: c5548b0319397a54ab029003bbf6c64b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

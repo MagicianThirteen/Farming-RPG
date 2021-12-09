@@ -1,7 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq.Expressions;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class InventoryManager : SingletonMonobehaviour<InventoryManager>
 {
@@ -11,6 +14,7 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
 
     public List<InventoryItem>[] inventoryLists;
     private int[] inventoryListCapacityIntArray;
+    private int[] selectItemInInventoryLists;
 
     protected override void Awake()
     {
@@ -18,6 +22,29 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
         ItemDetailsDictionary = new Dictionary<int, ItemDetails>();
         CreateItemDetailsDictionary();
         CreateInventoryLists();
+        InitSelectItems();
+    }
+
+    private void InitSelectItems()
+    {
+        selectItemInInventoryLists = new int[(int) InventoryLocation.count];
+        for (int i = 0; i < selectItemInInventoryLists.Length; i++)
+        {
+            selectItemInInventoryLists[i] = -1;
+        }
+    }
+    
+    //保存在当前容器中选中的物品
+    public void SaveSelectItem(InventoryLocation location, int itemCode)
+    {
+        selectItemInInventoryLists[(int) location] = itemCode;
+        Debug.Log($"当前选中的是{GetItemDetails(itemCode).itemDescription}");
+    }
+    
+    //清除在当前容器选中的物品
+    public void ClearSelectItem(InventoryLocation location)
+    {
+        selectItemInInventoryLists[(int) location] = -1;
     }
     
     //给各个容器和容量初始化
@@ -117,7 +144,7 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
     /// <param name="location"></param>
     /// <param name="itemCode"></param>
     /// <returns></returns>
-    private int FindItemInInventory(InventoryLocation location, int itemCode)
+    public int FindItemInInventory(InventoryLocation location, int itemCode)
     {
         List<InventoryItem> items = inventoryLists[(int) location];
         for (int i = 0; i < items.Count; i++)
@@ -163,5 +190,36 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
                       "总共有："+item.itemQuantity+"个");
         }
         Debug.Log("********************************************************");
+    }
+    
+    //把对应的工具转成对应的字符串
+    public string CovertItemTypeToString(ItemType type)
+    {
+        string itemDescription;
+        switch (type)
+        {
+            case ItemType.Breaking_tool:
+                itemDescription = Settings.BreakingTool;
+                break;
+            case ItemType.Chopping_tool:
+                itemDescription = Settings.ChoppingTool;
+                break;
+            case ItemType.Collecting_tool:
+                itemDescription = Settings.CollectingTool;
+                break;
+            case ItemType.Hoeing_tool:
+                itemDescription = Settings.HoeingTool;
+                break;
+            case ItemType.Reaping_tool:
+                itemDescription = Settings.ReapingTool;
+                break;
+            case ItemType.Watering_tool:
+                itemDescription = Settings.WateringTool;
+                break;
+            default:
+                itemDescription = type.ToString();
+                break;
+        }
+        return itemDescription;
     }
 }
