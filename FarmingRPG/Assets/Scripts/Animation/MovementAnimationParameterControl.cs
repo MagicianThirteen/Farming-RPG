@@ -21,7 +21,7 @@ public class MovementAnimationParameterControl : MonoBehaviour
     {
         EventHandler.MovementEvent -= SetAnimationParameters;
     }
-
+  
     private void SetAnimationParameters(float xInput, float yInput, bool isWalking, bool isRunning, bool isIdle,
         bool isCarrying, ToolEffect toolEffect,
         bool isUsingToolRight, bool isUsingToolLeft, bool isUsingToolUp, bool isUsingToolDown,

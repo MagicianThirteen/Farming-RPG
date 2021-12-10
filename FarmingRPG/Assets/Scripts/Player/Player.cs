@@ -36,6 +36,7 @@ public class Player : SingletonMonobehaviour<Player>
     #pragma warning restore 414
     private Camera _camera;
     private bool isPlayerEnableWalk;
+    [SerializeField]private SpriteRenderer equipItemSprite;
     public bool IsPlayerEnableWalk
     {
         get => isPlayerEnableWalk;
@@ -65,6 +66,31 @@ public class Player : SingletonMonobehaviour<Player>
                 isSwingingToolRight, isSwingingToolLeft, isSwingingToolUp, isSwingingToolDown,
                 false, false, false, false);
         }
+    }
+
+    //取消后，清除自己所选的道具
+    public void ClearCarriedItem()
+    {
+        if(equipItemSprite==null) return;
+        equipItemSprite.sprite = null;
+        equipItemSprite.color = new Color(1, 1, 1, 0);
+    }
+    
+    //选中后，展示自己举着的道具
+    public void ShowCarriedItem(int itemCode)
+    {
+        ItemDetails details = InventoryManager.Instance.GetItemDetails(itemCode);
+        if(details==null||equipItemSprite==null) return;
+        if (details.canBeCarried)
+        {
+            equipItemSprite.sprite = details.itemSprite;
+            equipItemSprite.color = new Color(1, 1, 1, 1);
+        }
+        else
+        {
+            ClearCarriedItem();
+        }
+        
     }
 
     public void DisablePlayerInputAndResetMovement()

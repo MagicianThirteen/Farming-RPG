@@ -14,7 +14,7 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
 
     public List<InventoryItem>[] inventoryLists;
     private int[] inventoryListCapacityIntArray;
-    private int[] selectItemInInventoryLists;
+    public int[] selectItemInInventoryLists;
 
     protected override void Awake()
     {
@@ -38,7 +38,7 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
     public void SaveSelectItem(InventoryLocation location, int itemCode)
     {
         selectItemInInventoryLists[(int) location] = itemCode;
-        Debug.Log($"当前选中的是{GetItemDetails(itemCode).itemDescription}");
+        //Debug.Log($"当前选中的是{GetItemDetails(itemCode).itemDescription}");
     }
     
     //清除在当前容器选中的物品

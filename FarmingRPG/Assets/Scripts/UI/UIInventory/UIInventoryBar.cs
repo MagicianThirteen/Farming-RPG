@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +19,6 @@ public class UIInventoryBar : MonoBehaviour
     public UIInventorySlot[] inventorySlots;
     public GameObject itemGo;
     public GameObject dragItemGo;
-
     private RectTransform _rect;
     // Update is called once per frame
     private void Start()
@@ -76,6 +76,7 @@ public class UIInventoryBar : MonoBehaviour
                 inventorySlots[i].inventorySlotHighlight.color = new Color(0, 0, 0, 0);
             }
         }
+        //取消选中后玩家不选择道具
     }
 
     public void SetInventorySelect()
@@ -90,6 +91,8 @@ public class UIInventoryBar : MonoBehaviour
                 }
             }
         }
+        
+       
     }
 
     private void ClearInventoryBar()

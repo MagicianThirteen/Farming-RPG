@@ -165,6 +165,8 @@ public class UIInventorySlot:MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
         inventoryBar.ClearInventorySelect();
         //清除记录的数据，通过Inventory脚本
         InventoryManager.Instance.ClearSelectItem(InventoryLocation.player);
+        //清除玩家头上所选道具
+        Player.Instance.ClearCarriedItem();
     }
 
     private void SetSlotSelect()
@@ -175,5 +177,11 @@ public class UIInventorySlot:MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
         inventoryBar.SetInventorySelect();
         //保存记录的数据，通过Inventory脚本
         InventoryManager.Instance.SaveSelectItem(InventoryLocation.player,itemDetails.itemCode);
+        //玩家举着所选道具
+        int itemcode = InventoryManager.Instance.selectItemInInventoryLists[(int) InventoryLocation.player];
+        if (itemcode != -1)
+        {
+            Player.Instance.ShowCarriedItem(itemcode);
+        }
     }
 }

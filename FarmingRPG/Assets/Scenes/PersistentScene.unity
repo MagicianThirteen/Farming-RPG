@@ -344,7 +344,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172098320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1666278483}
@@ -3162,6 +3162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemList: {fileID: 11400000, guid: 74176a6ff0c07f5458d8c6c8594e96f3, type: 2}
+  selectItemInInventoryLists: 
 --- !u!4 &2074790870
 Transform:
   m_ObjectHideFlags: 0
@@ -3199,6 +3200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b9814f0a8262142bc50eb58e80ad2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipItemSprite: {fileID: 172098322}
 --- !u!1001 &7862066943943259814
 PrefabInstance:
   m_ObjectHideFlags: 0
