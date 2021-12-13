@@ -1,5 +1,6 @@
 
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -21,6 +22,7 @@ public class UIInventorySlot:MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
     private GameObject textBox;
     private Canvas parentCanvas;
     public bool isSelect=false;
+    
 
     private void Start()
     {
@@ -167,6 +169,15 @@ public class UIInventorySlot:MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
         InventoryManager.Instance.ClearSelectItem(InventoryLocation.player);
         //清除玩家头上所选道具
         Player.Instance.ClearCarriedItem();
+        //播放替换动画
+        List<CharacterAttribute> characterAttributes = new List<CharacterAttribute>();
+        CharacterAttribute attribute = new CharacterAttribute();
+        attribute.characterPart = CharacterPartAnimator.arms;
+        attribute.partVariantColour = PartVariantColour.none;
+        attribute.partVariantType = PartVariantType.none;
+        characterAttributes.Add(attribute);
+        Player.Instance._animationOverrides.ApplyCharacterCustomisationParameters(characterAttributes);
+        
     }
 
     private void SetSlotSelect()
@@ -183,5 +194,13 @@ public class UIInventorySlot:MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
         {
             Player.Instance.ShowCarriedItem(itemcode);
         }
+        //播放替换动画
+        List<CharacterAttribute> characterAttributes = new List<CharacterAttribute>();
+        CharacterAttribute attribute = new CharacterAttribute();
+        attribute.characterPart = CharacterPartAnimator.arms;
+        attribute.partVariantColour = PartVariantColour.none;
+        attribute.partVariantType = PartVariantType.carry;
+        characterAttributes.Add(attribute);
+        Player.Instance._animationOverrides.ApplyCharacterCustomisationParameters(characterAttributes);
     }
 }

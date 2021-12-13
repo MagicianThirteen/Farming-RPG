@@ -37,6 +37,7 @@ public class Player : SingletonMonobehaviour<Player>
     private Camera _camera;
     private bool isPlayerEnableWalk;
     [SerializeField]private SpriteRenderer equipItemSprite;
+    public AnimationOverrides _animationOverrides;
     public bool IsPlayerEnableWalk
     {
         get => isPlayerEnableWalk;
@@ -49,6 +50,7 @@ public class Player : SingletonMonobehaviour<Player>
         rigidbody2D = GetComponent<Rigidbody2D>();
         _camera=Camera.main;
         isPlayerEnableWalk = true;
+        _animationOverrides = GetComponentInChildren<AnimationOverrides>();
     }
 
     private void Update()
