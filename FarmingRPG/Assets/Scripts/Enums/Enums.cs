@@ -105,4 +105,15 @@ public enum PartVariantType
     count
 }
 
+//时间四季
+public enum Season
+{
+    Spring,
+    Summer,
+    Autumn,
+    Winter,
+    none,
+    count
+}
+
 
