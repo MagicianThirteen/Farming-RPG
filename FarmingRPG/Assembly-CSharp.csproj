@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Item\Item.cs" />
      <Compile Include="Assets\Scripts\Player\TriggerObscuringItemFader.cs" />
      <Compile Include="Assets\Scripts\Animation\SO_AnimationType.cs" />
+     <Compile Include="Assets\Scripts\TimeSystem\TimeManager.cs" />
      <Compile Include="Assets\Scripts\Item\ObscuringItemFader.cs" />
      <Compile Include="Assets\Scripts\Enums\Enums.cs" />
      <Compile Include="Assets\Scripts\Utilities\Property Drawers\ItemCodeDescriptionAttribute.cs" />
@@ -77,7 +78,7 @@
      <Compile Include="Assets\Scripts\Animation\MovementAnimationParameterControl.cs" />
      <Compile Include="Assets\Scripts\Animation\AnimationOverrides.cs" />
      <Compile Include="Assets\Scripts\UI\UIInventory\UIInventorySlot.cs" />
-     <Compile Include="Assets\Scripts\TimeSystem\TimeManager.cs" />
+     <Compile Include="Assets\Scripts\TimeSystem\GameClock.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
