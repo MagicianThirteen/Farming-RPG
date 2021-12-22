@@ -40,11 +40,11 @@ public class TimeManager :SingletonMonobehaviour<TimeManager>
         {
             gameTick = 0;
             UpdateGameSecond();
-            Debug.Log($"Game Year:{gameYear}+Game Season:{gameSeason.ToString()}" +
+            /*Debug.Log($"Game Year:{gameYear}+Game Season:{gameSeason.ToString()}" +
                       $"Game Day:{gameDay}+Game Hour:{gameHour}" +
                       $"Game Minute:{gameMinute}" +
                       $"Game Second:{gameSecond}" +
-                      $"Game Week:{gameDayOfWeek}");
+                      $"Game Week:{gameDayOfWeek}");*/
         }
     }
 
@@ -55,21 +55,15 @@ public class TimeManager :SingletonMonobehaviour<TimeManager>
         {
             gameSecond = 0;
             gameMinute++;
-            //调用分事件
-            EventHandler.CallAdvanceGameMinuteEvent(gameYear,gameSeason,gameDay,gameDayOfWeek,gameHour,gameMinute,gameSecond);
             if (gameMinute > 59)
             {
                 gameMinute = 0;
                 gameHour++;
-                //调用时事件
-                EventHandler.CallAdvanceGameHourEvent(gameYear,gameSeason,gameDay,gameDayOfWeek,gameHour,gameMinute,gameSecond);
                 if (gameHour > 23)
                 {
                     gameHour = 0;
                     gameDay++;
-                    //调用天事件
-                    EventHandler.CallAdvanceGameDayEvent(gameYear,gameSeason,gameDay,gameDayOfWeek,gameHour,gameMinute,gameSecond);
-                    //转换成周
+                   //转换成周
                     gameDayOfWeek = GetDayOfWeek();
                     if (gameDay > 30)
                     {
@@ -77,23 +71,47 @@ public class TimeManager :SingletonMonobehaviour<TimeManager>
                         int gs = (int) gameSeason;
                         gs++;
                         gameSeason = (Season) gs;
-                        //调用季节事件
-                        EventHandler.CallAdvanceGameSeasonEvent(gameYear,gameSeason,gameDay,gameDayOfWeek,gameHour,gameMinute,gameSecond);
-                        if (gs > 3)
+                         if (gs > 3)
                         {
                             gs = 0;
+                            gameSeason = (Season) gs;
                             gameYear++;
-                            //调用年事件
-                            EventHandler.CallAdvanceGameYearEvent(gameYear,gameSeason,gameDay,gameDayOfWeek,gameHour,gameMinute,gameSecond);
-                            if (gameYear > 999)
+                            if (gameYear > 9999)
                             {
                                 gameYear = 1;
                                 
                             }
+                            //调用年事件
+                            EventHandler.CallAdvanceGameYearEvent(gameYear,gameSeason,gameDay,gameDayOfWeek,gameHour,gameMinute,gameSecond);
                         }
+                         //调用季节事件
+                         EventHandler.CallAdvanceGameSeasonEvent(gameYear,gameSeason,gameDay,gameDayOfWeek,gameHour,gameMinute,gameSecond);
                     }
+                    //调用天事件
+                    EventHandler.CallAdvanceGameDayEvent(gameYear,gameSeason,gameDay,gameDayOfWeek,gameHour,gameMinute,gameSecond);
                 }
+                //调用时事件
+                EventHandler.CallAdvanceGameHourEvent(gameYear,gameSeason,gameDay,gameDayOfWeek,gameHour,gameMinute,gameSecond);
             }
+            //调用分事件
+            EventHandler.CallAdvanceGameMinuteEvent(gameYear,gameSeason,gameDay,gameDayOfWeek,gameHour,gameMinute,gameSecond);
+        }
+    }
+
+    //测试时间的准确性，通过按键加速时间
+    public void TestAdvanceGameMinute()
+    {
+        for (int i = 0; i < 60; i++)
+        {
+            UpdateGameSecond();
+        }
+    }
+
+    public void TestAdvanceGameDay()
+    {
+        for (int i = 0; i < 86400; i++)
+        {
+            UpdateGameSecond();
         }
     }
     

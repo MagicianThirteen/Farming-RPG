@@ -60,6 +60,7 @@ public class Player : SingletonMonobehaviour<Player>
             ResetAnimationTriggers();
             PlayerMovementInput();
             PlayerWalkInput();
+            PlayerTimeInputTest();
             //调用事件发送
             EventHandler.CallMovementEvent(xInput, yInput, isWalking, isRunning, isIdle, isCarrying, toolEffect,
                 isUsingToolRight, isUsingToolLeft, isUsingToolUp, isUsingToolDown,
@@ -94,6 +95,20 @@ public class Player : SingletonMonobehaviour<Player>
         }
         
     }
+    
+    //按键测试时间
+    void PlayerTimeInputTest()
+    {
+        if (Input.GetKey(KeyCode.T))
+        {
+            TimeManager.Instance.TestAdvanceGameMinute();
+        }
+        if (Input.GetKey(KeyCode.G))
+        {
+            TimeManager.Instance.TestAdvanceGameDay();
+        }
+    }
+    
 
     public void DisablePlayerInputAndResetMovement()
     {

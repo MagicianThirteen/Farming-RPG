@@ -2396,7 +2396,7 @@ GameObject:
   - component: {fileID: 1455156775}
   - component: {fileID: 1455156774}
   m_Layer: 0
-  m_Name: day
+  m_Name: date
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3881,6 +3881,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80fa777d7e090447b3c7efeefc84c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yearText: {fileID: 1085801177}
+  dateText: {fileID: 1455156774}
+  timeText: {fileID: 805148042}
+  seasonText: {fileID: 995956689}
 --- !u!114 &2115219226
 MonoBehaviour:
   m_ObjectHideFlags: 0
