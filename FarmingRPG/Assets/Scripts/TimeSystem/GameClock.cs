@@ -27,14 +27,15 @@ public class GameClock : MonoBehaviour
         string gameSeasonStr = gameSeason.ToString();
         string gameDateStr = gameDayOfWeek + ". " + gameDay;
         string gameTimeStr = "";
+        int tmpMinute=gameMinute - (gameMinute % 10);
         if (gameHour <= 12)
         {
-            gameTimeStr = gameHour.ToString() + " : " + gameMinute.ToString() + " am";
+            gameTimeStr = gameHour.ToString() + " : " + tmpMinute.ToString() + " am";
         }
         else
         {
             int tmpHour = gameHour - 12;
-            gameTimeStr = tmpHour.ToString() + " : " + gameMinute.ToString() + " pm";
+            gameTimeStr = tmpHour.ToString() + " : " + tmpMinute.ToString() + " pm";
         }
         yearText.SetText(gameYearStr);
         dateText.SetText(gameDateStr);
