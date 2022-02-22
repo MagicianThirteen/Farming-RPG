@@ -22,13 +22,27 @@ public class UIInventorySlot:MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
     private GameObject textBox;
     private Canvas parentCanvas;
     public bool isSelect=false;
-    
+
+    private void OnEnable()
+    {
+        EventHandler.AfterSceneLoadEvent += FindItemParent;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.AfterSceneLoadEvent -= FindItemParent;
+    }
+
+    public void FindItemParent()
+    {
+        itemParentTransform = GameObject.FindWithTag(Tags.ItemParentTransform).transform;
+    }
 
     private void Start()
     {
         mainCamera=Camera.main;
         parentCanvas = GetComponentInParent<Canvas>();
-        itemParentTransform = GameObject.FindWithTag(Tags.ItemParentTransform).transform;
+        //itemParentTransform = GameObject.FindWithTag(Tags.ItemParentTransform).transform;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -177,7 +191,6 @@ public class UIInventorySlot:MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
         attribute.partVariantType = PartVariantType.none;
         characterAttributes.Add(attribute);
         Player.Instance._animationOverrides.ApplyCharacterCustomisationParameters(characterAttributes);
-        
     }
 
     private void SetSlotSelect()

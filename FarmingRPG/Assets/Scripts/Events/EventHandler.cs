@@ -25,6 +25,15 @@ public static class EventHandler
     public static event Action<int, Season, int, string, int, int, int> AdvanceGameSeasonEvent;
     //定义年事件 
     public static event Action<int, Season, int, string, int, int, int> AdvanceGameYearEvent;
+    
+    //淡出之前事件
+    public static event Action BeforeSceneUnloadFadeOutEvent;
+    //卸载场景之前事件
+    public static event Action BeforeSceneUnloadEvent;
+    //加载场景之后事件
+    public static event Action AfterSceneLoadEvent;
+    //淡入之后事件
+    public static event Action AfterSceneLoadFadeInEvent;
 
     public static void CallMovementEvent(float inputX, float inputY, bool isWalking, bool isRunning, bool isIdle,
         bool isCarrying, ToolEffect toolEffect,
@@ -95,6 +104,35 @@ public static class EventHandler
         if (AdvanceGameYearEvent != null)
         {
             AdvanceGameYearEvent(gameYear, gameSeason, gameDay, gameDayOfWeek, gameHour, gameMinute, gameSecond);
+        }
+    }
+
+    public static void CallBeforeSceneUnloadFadeOutEvent()
+    {
+        if (BeforeSceneUnloadFadeOutEvent != null)
+        {
+            BeforeSceneUnloadFadeOutEvent();
+        }
+    }
+    public static void CallBeforeSceneUnloadEvent()
+    {
+        if (BeforeSceneUnloadEvent != null)
+        {
+            BeforeSceneUnloadEvent();
+        }
+    }
+    public static void CallAfterSceneLoadEvent()
+    {
+        if (AfterSceneLoadEvent != null)
+        {
+            AfterSceneLoadEvent();
+        }
+    }
+    public static void CallAfterSceneLoadFadeInEvent()
+    {
+        if (AfterSceneLoadFadeInEvent != null)
+        {
+            AfterSceneLoadFadeInEvent();
         }
     }
 }

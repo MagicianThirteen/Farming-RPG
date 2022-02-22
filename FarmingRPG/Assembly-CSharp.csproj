@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Player\TriggerObscuringItemFader.cs" />
      <Compile Include="Assets\Scripts\Animation\SO_AnimationType.cs" />
      <Compile Include="Assets\Scripts\TimeSystem\TimeManager.cs" />
+     <Compile Include="Assets\Scripts\Scene\SceneControllerManager.cs" />
      <Compile Include="Assets\Scripts\Item\ObscuringItemFader.cs" />
      <Compile Include="Assets\Scripts\Enums\Enums.cs" />
      <Compile Include="Assets\Scripts\Utilities\Property Drawers\ItemCodeDescriptionAttribute.cs" />

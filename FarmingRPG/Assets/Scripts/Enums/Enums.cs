@@ -116,4 +116,12 @@ public enum Season
     count
 }
 
+//场景枚举
+public enum SceneName
+{
+    Scene1_Farm,
+    Scene2_Field,
+    Scene3_Cabin
+}
+
 

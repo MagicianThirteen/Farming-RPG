@@ -1,6 +1,7 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : SingletonMonobehaviour<Player>
 {
@@ -107,6 +108,11 @@ public class Player : SingletonMonobehaviour<Player>
         {
             TimeManager.Instance.TestAdvanceGameDay();
         }
+
+        if (Input.GetKey(KeyCode.Y))
+        {
+            SceneControllerManager.Instance.FadeAndLoadScene(SceneName.Scene1_Farm.ToString(),transform.position);
+        }
     }
     
 
@@ -143,6 +149,7 @@ public class Player : SingletonMonobehaviour<Player>
 
     private void FixedUpdate()
     {
+        //这里利用刚体进行移动
         Vector2 positon = new Vector2(xInput * Time.deltaTime*moveSpeed, yInput * Time.deltaTime*moveSpeed);
         rigidbody2D.MovePosition(rigidbody2D.position+positon);
     }
