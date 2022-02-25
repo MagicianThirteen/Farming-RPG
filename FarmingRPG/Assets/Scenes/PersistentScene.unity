@@ -1485,7 +1485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 956e634bd71ee7c43819e4b1e359ca13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faterCanvasGroup: {fileID: 231844287}
+  faderCanvasGroup: {fileID: 231844287}
   fadeImage: {fileID: 231844285}
   fadeDuration: 1
   startSceneName: 0
