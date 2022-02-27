@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -39,7 +40,7 @@ public class SceneControllerManager : SingletonMonobehaviour<SceneControllerMana
         yield return StartCoroutine(Fade(0));
         EventHandler.CallAfterSceneLoadFadeInEvent();
     }
-
+    
     IEnumerator Fade(float target)
     {
         //设置标志位 false
