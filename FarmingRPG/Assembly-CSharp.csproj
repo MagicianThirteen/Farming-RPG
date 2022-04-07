@@ -61,13 +61,16 @@
      <Compile Include="Assets\Scripts\TimeSystem\TimeManager.cs" />
      <Compile Include="Assets\Scripts\Scene\SceneControllerManager.cs" />
      <Compile Include="Assets\Scripts\Item\ObscuringItemFader.cs" />
+     <Compile Include="Assets\Scripts\SaveSystem\SceneItem.cs" />
      <Compile Include="Assets\Scripts\Scene\SceneTeleport.cs" />
      <Compile Include="Assets\Scripts\Enums\Enums.cs" />
      <Compile Include="Assets\Scripts\Utilities\Property Drawers\ItemCodeDescriptionAttribute.cs" />
+     <Compile Include="Assets\Scripts\SaveSystem\SceneSave.cs" />
      <Compile Include="Assets\Scripts\UI\UIInventory\UIInventoryBar.cs" />
      <Compile Include="Assets\Scripts\Scene\SwitchConfineBoundingShape.cs" />
      <Compile Include="Assets\Scripts\Player\ItemPickUp.cs" />
      <Compile Include="Assets\Scripts\Item\SO_ItemList.cs" />
+     <Compile Include="Assets\Scripts\Misc\Vector3Serializable.cs" />
      <Compile Include="Assets\Scripts\Inventory\InventoryItem.cs" />
      <Compile Include="Assets\Scripts\UI\UIInventory\UIInventoryTextBox.cs" />
      <Compile Include="Assets\Scripts\Animation\CharacterAttribute.cs" />
@@ -81,6 +84,8 @@
      <Compile Include="Assets\Scripts\Animation\AnimationOverrides.cs" />
      <Compile Include="Assets\Scripts\UI\UIInventory\UIInventorySlot.cs" />
      <Compile Include="Assets\Scripts\TimeSystem\GameClock.cs" />
+     <Compile Include="Assets\Scripts\SaveSystem\GameObjectSave.cs" />
+     <Compile Include="Assets\Scripts\SaveSystem\Isaveable.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
