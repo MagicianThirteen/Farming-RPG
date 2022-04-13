@@ -37,7 +37,7 @@ public class ItemCodeDescriptionDrawer : PropertyDrawer
    private string GetItemDescription(int itemCode)
    {
       SO_ItemList soItemList;
-      soItemList=AssetDatabase.LoadAssetAtPath("Assets/Scripts/Scriptable Object Assets/Item/so_ItemList.asset",typeof(SO_ItemList)) as SO_ItemList;
+      soItemList=AssetDatabase.LoadAssetAtPath("Assets/Scriptable Object Assets/Item/so_ItemList.asset",typeof(SO_ItemList)) as SO_ItemList;
       ItemDetails itemDetails = soItemList.itemDetails.Find(x => x.itemCode == itemCode);
       if (itemDetails != null)
       {

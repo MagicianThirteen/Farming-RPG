@@ -30,15 +30,24 @@ public class SceneControllerManager : SingletonMonobehaviour<SceneControllerMana
         yield return StartCoroutine(Fade(1));
 
         Player.Instance.transform.position = bornPosition;
-       
+
         EventHandler.CallBeforeSceneUnloadEvent();
+        //保存数据
+        SaveLoadManager.Instance.StoreCurrentSceneData();
+       
         yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
 
         yield return StartCoroutine(LoadSceneAndSetActive(sceneName));
+
         EventHandler.CallAfterSceneLoadEvent();
+        
+        //还原数据
+        SaveLoadManager.Instance.RestoreCurrentSceneData();
 
         yield return StartCoroutine(Fade(0));
         EventHandler.CallAfterSceneLoadFadeInEvent();
+        
+        
     }
     
     IEnumerator Fade(float target)

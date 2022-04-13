@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,12 @@ public class Item : MonoBehaviour
         set => _itemCode = value;
     }
     private SpriteRenderer _spriteRenderer;
-    
+
+    private void Awake()
+    {
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +39,10 @@ public class Item : MonoBehaviour
         ItemDetails itemDetails=InventoryManager.Instance.GetItemDetails(itemCode);
         if (itemDetails != null)
         {
+            if (_spriteRenderer!= null)
+            {
+                _spriteRenderer.sprite = itemDetails.itemSprite;
+            }
             if (itemDetails.itemType == ItemType.Reapable_scenary)
             {
                 gameObject.AddComponent<ItemNudge>();
