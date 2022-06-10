@@ -18,7 +18,7 @@ public class SceneItemManager : SingletonMonobehaviour<SceneItemManager>,Isaveab
     {
         base.Awake();
         _generateGUID = GetComponent<GenerateGUID>().GUID;
-        gameObjectSave = new GameObjectSave();
+        gameObjectSave = new GameObjectSave();//这里是各自的gameObjectSave
     }
 
     private void OnEnable()

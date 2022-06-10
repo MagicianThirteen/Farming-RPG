@@ -30129,6 +30129,7 @@ GameObject:
   - component: {fileID: 1867562983721117273}
   - component: {fileID: 1867562983721117275}
   - component: {fileID: 1867562983721117272}
+  - component: {fileID: 1867562983721117255}
   m_Layer: 0
   m_Name: BoolPath
   m_TagString: Untagged
@@ -30136,6 +30137,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1867562983721117255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867562983721117254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486f3535350596a4c999aa942e9700e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soGridProperties: {fileID: 11400000, guid: 8a2fd15e06d6f644eb1ff85f034b7808, type: 2}
+  gridProperty: 3
 --- !u!483693784 &1867562983721117272
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -37791,6 +37806,7 @@ GameObject:
   - component: {fileID: 1867562984187040327}
   - component: {fileID: 1867562984187040345}
   - component: {fileID: 1867562984187040326}
+  - component: {fileID: 1867562984187040325}
   m_Layer: 0
   m_Name: BoolNPCObstacle
   m_TagString: Untagged
@@ -37798,6 +37814,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1867562984187040325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867562984187040324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486f3535350596a4c999aa942e9700e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soGridProperties: {fileID: 11400000, guid: 8a2fd15e06d6f644eb1ff85f034b7808, type: 2}
+  gridProperty: 4
 --- !u!483693784 &1867562984187040326
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -91560,6 +91590,7 @@ GameObject:
   - component: {fileID: 1867562984609641299}
   - component: {fileID: 1867562984609641301}
   - component: {fileID: 1867562984609641298}
+  - component: {fileID: 1867562984609641297}
   m_Layer: 0
   m_Name: BoolCanDropItem
   m_TagString: Untagged
@@ -91567,6 +91598,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1867562984609641297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867562984609641296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486f3535350596a4c999aa942e9700e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soGridProperties: {fileID: 11400000, guid: 8a2fd15e06d6f644eb1ff85f034b7808, type: 2}
+  gridProperty: 1
 --- !u!483693784 &1867562984609641298
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -91678,6 +91723,7 @@ GameObject:
   - component: {fileID: 1867562984745791171}
   - component: {fileID: 1867562984745791173}
   - component: {fileID: 1867562984745791170}
+  - component: {fileID: 1867562984745791169}
   m_Layer: 0
   m_Name: BoolCanPlaceFurniture
   m_TagString: Untagged
@@ -91685,6 +91731,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1867562984745791169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867562984745791168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486f3535350596a4c999aa942e9700e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soGridProperties: {fileID: 11400000, guid: 8a2fd15e06d6f644eb1ff85f034b7808, type: 2}
+  gridProperty: 2
 --- !u!483693784 &1867562984745791170
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -91928,6 +91988,7 @@ GameObject:
   - component: {fileID: 1867562985160365304}
   - component: {fileID: 1867562985160365306}
   - component: {fileID: 1867562985160365307}
+  - component: {fileID: 1867562985160365308}
   m_Layer: 0
   m_Name: BoolDiggable
   m_TagString: Untagged
@@ -92021,6 +92082,20 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &1867562985160365308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867562985160365305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486f3535350596a4c999aa942e9700e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soGridProperties: {fileID: 11400000, guid: 8a2fd15e06d6f644eb1ff85f034b7808, type: 2}
+  gridProperty: 0
 --- !u!1839735485 &1867562985329607696
 Tilemap:
   m_ObjectHideFlags: 0
@@ -101131,18 +101206,6 @@ CompositeCollider2D:
   - m_Collider: {fileID: 2495791128001734405}
     m_ColliderPaths:
     - - X: 410000000
-        Y: 89999900
-      - X: 410000041
-        Y: 89999900
-      - X: 410000100
-        Y: 89999959
-      - X: 410000100
-        Y: 150000041
-      - X: 410000041
-        Y: 150000100
-      - X: 410000000
-        Y: 150000100
-      - X: 410000000
         Y: 310000000
       - X: -400000000
         Y: 310000000
@@ -101161,9 +101224,9 @@ CompositeCollider2D:
       - X: 220000000
         Y: 240000000
       - X: 220000000
-        Y: 289999900
+        Y: 290000000
       - X: 260000000
-        Y: 289999900
+        Y: 290000000
       - X: 260000000
         Y: 240000000
       - X: 270000000
@@ -101197,20 +101260,10 @@ CompositeCollider2D:
       - X: 400000000
         Y: 170000000
       - X: 400000000
-        Y: 150000100
-      - X: 404999959
-        Y: 150000100
-      - X: 404999900
-        Y: 150000041
-      - X: 404999900
-        Y: 89999959
-      - X: 404999959
-        Y: 89999900
-      - X: 399999959
-        Y: 89999900
-      - X: 399999900
-        Y: 89999959
-      - X: 399999900
+        Y: 150000000
+      - X: 405000000
+        Y: 150000000
+      - X: 405000000
         Y: 90000000
       - X: 380000000
         Y: 90000000
@@ -101296,8 +101349,8 @@ CompositeCollider2D:
       - {x: 21, y: 29.999971}
       - {x: 21.000029, y: 24}
       - {x: 22, y: 24.000029}
-      - {x: 22.000029, y: 28.99999}
-      - {x: 26, y: 28.999962}
+      - {x: 22.000029, y: 29}
+      - {x: 26, y: 28.999971}
       - {x: 26.000029, y: 24}
       - {x: 27, y: 23.999971}
       - {x: 27.000029, y: 14}
@@ -101314,9 +101367,9 @@ CompositeCollider2D:
       - {x: 38, y: 19.999971}
       - {x: 38.00003, y: 17}
       - {x: 40, y: 16.999971}
-      - {x: 40.00003, y: 15.00001}
-      - {x: 40.499992, y: 14.999974}
-      - {x: 40.49997, y: 8.99999}
+      - {x: 40.00003, y: 15}
+      - {x: 40.5, y: 14.999971}
+      - {x: 40.499973, y: 9}
       - {x: 38, y: 8.99997}
       - {x: 38.00003, y: 8}
       - {x: 40, y: 7.9999704}

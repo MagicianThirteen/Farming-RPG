@@ -124,4 +124,14 @@ public enum SceneName
     Scene3_Cabin
 }
 
+//瓦片地图层属性定义
+public enum GridBoolProperty
+{
+    diggable,
+    canDropItem,
+    canPlaceFurniture,
+    isPath,
+    isNPCObstacle
+}
+
 

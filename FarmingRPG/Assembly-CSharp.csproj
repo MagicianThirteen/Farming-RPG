@@ -58,15 +58,18 @@
      <Compile Include="Assets\Scripts\Item\ItemNudge.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <Compile Include="Assets\Scripts\Scene\SceneItemManager.cs" />
+     <Compile Include="Assets\Scripts\Map\GridProperty.cs" />
      <Compile Include="Assets\Scripts\Item\Item.cs" />
      <Compile Include="Assets\Scripts\Player\TriggerObscuringItemFader.cs" />
      <Compile Include="Assets\Scripts\Animation\SO_AnimationType.cs" />
      <Compile Include="Assets\Scripts\TimeSystem\TimeManager.cs" />
+     <Compile Include="Assets\Scripts\Map\TilemapGridProperties.cs" />
      <Compile Include="Assets\Scripts\Scene\SceneControllerManager.cs" />
      <Compile Include="Assets\Scripts\Item\ObscuringItemFader.cs" />
      <Compile Include="Assets\Scripts\SaveSystem\SceneItem.cs" />
      <Compile Include="Assets\Scripts\Scene\SceneTeleport.cs" />
      <Compile Include="Assets\Scripts\Enums\Enums.cs" />
+     <Compile Include="Assets\Scripts\Map\SO_GridProperties.cs" />
      <Compile Include="Assets\Scripts\Utilities\Property Drawers\ItemCodeDescriptionAttribute.cs" />
      <Compile Include="Assets\Scripts\SaveSystem\SceneSave.cs" />
      <Compile Include="Assets\Scripts\UI\UIInventory\UIInventoryBar.cs" />
@@ -74,6 +77,7 @@
      <Compile Include="Assets\Scripts\Player\ItemPickUp.cs" />
      <Compile Include="Assets\Scripts\Item\SO_ItemList.cs" />
      <Compile Include="Assets\Scripts\Misc\Vector3Serializable.cs" />
+     <Compile Include="Assets\Scripts\Map\GridCoordinate.cs" />
      <Compile Include="Assets\Scripts\SaveSystem\GenerateGUID.cs" />
      <Compile Include="Assets\Scripts\Inventory\InventoryItem.cs" />
      <Compile Include="Assets\Scripts\UI\UIInventory\UIInventoryTextBox.cs" />
