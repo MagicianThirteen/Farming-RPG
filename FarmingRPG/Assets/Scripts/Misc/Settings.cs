@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public static class Settings
 {
     //定义现实中的时间为多少游戏时间
     public const float secondsPerGameSecond = 0.012f;
+    
+    //定义格子大小
+    public const float GridCellSize = 1f;
     
     //定义工具
     public const string HoeingTool = "Hoe";

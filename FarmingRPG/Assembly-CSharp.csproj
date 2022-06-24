@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\UI\UIInventory\UIInventoryBar.cs" />
      <Compile Include="Assets\Scripts\Scene\SwitchConfineBoundingShape.cs" />
      <Compile Include="Assets\Scripts\Player\ItemPickUp.cs" />
+     <Compile Include="Assets\Scripts\Map\GridPropertyDetails.cs" />
      <Compile Include="Assets\Scripts\Item\SO_ItemList.cs" />
      <Compile Include="Assets\Scripts\Misc\Vector3Serializable.cs" />
      <Compile Include="Assets\Scripts\Map\GridCoordinate.cs" />
@@ -84,6 +85,7 @@
      <Compile Include="Assets\Scripts\Animation\CharacterAttribute.cs" />
      <Compile Include="Assets\Scripts\Inventory\InventoryManager.cs" />
      <Compile Include="Assets\Scripts\Misc\Tags.cs" />
+     <Compile Include="Assets\Scripts\Map\GridPropertiesManager.cs" />
      <Compile Include="Assets\Scripts\Item\ItemDetails.cs" />
      <Compile Include="Assets\Scripts\Misc\SingletonMonobehaviour.cs" />
      <Compile Include="Assets\Scripts\Misc\Settings.cs" />

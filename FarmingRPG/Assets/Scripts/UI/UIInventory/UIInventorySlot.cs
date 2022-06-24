@@ -22,6 +22,7 @@ public class UIInventorySlot:MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
     private GameObject textBox;
     private Canvas parentCanvas;
     public bool isSelect=false;
+    public GameObject itemPrefab;
 
     private void OnEnable()
     {
@@ -85,7 +86,16 @@ public class UIInventorySlot:MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
             }
             else
             {
-                if (itemDetails != null&&itemDetails.canBeDropped==true)//这个条件要再放下之前判断
+                //屏幕坐标转世界坐标转格子坐标
+                Vector3 worldPoint = mainCamera.ScreenToWorldPoint(new Vector3(
+                    Input.mousePosition.x, Input.mousePosition.y,
+                    -mainCamera.transform.position.z));
+                Vector3Int cellPoint=GridPropertiesManager.Instance.grid.WorldToCell(worldPoint);
+                GridPropertyDetails gridDetail = GridPropertiesManager.Instance.GetGridPropertyDetails(
+                    cellPoint.x, cellPoint.y);
+                if(gridDetail==null) return;
+                if (itemDetails != null&&itemDetails.canBeDropped==true
+                &&gridDetail.canDropItem )//这个条件要再放下之前判断
                 {
                     DropItemInScene();
                 }
@@ -103,7 +113,7 @@ public class UIInventorySlot:MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDr
             Item _item=item.GetComponent<Item>();
             _item.ItemCode = itemDetails.itemCode;
             _item.GetComponentInChildren<SpriteRenderer>().sprite = itemDetails.itemSprite;
-            item.transform.position = currPos;
+            item.transform.position = new Vector3(currPos.x,currPos.y-Settings.GridCellSize/2,0);
             //清除库存的方法
             InventoryManager.Instance.MoveItem(InventoryLocation.player,itemDetails.itemCode);
             if (InventoryManager.Instance.FindItemInInventory(InventoryLocation.player, _item.ItemCode) == -1)
